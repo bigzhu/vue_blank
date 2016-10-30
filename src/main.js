@@ -42,3 +42,7 @@ App.router = router
 new Vue(App).$mount('#app')
 
 fastclick.attach(document.body)
+
+import {initErrorHandle} from '../../lib_bz/functions/error'
+//  toastr show error
+initErrorHandle()
