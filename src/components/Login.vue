@@ -1,15 +1,12 @@
 <template>
-<div>
-  <navigation></navigation>
+  <div>
   </div>
 </template>
 
 <script>
-  import Navigation from './Navigation'
   export default {
     props: [],
     components: {
-      Navigation
     },
     data: function () {
       return {
