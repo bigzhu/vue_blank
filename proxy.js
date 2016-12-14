@@ -1,11 +1,11 @@
 module.exports = {
   '/api_': {
-    target: 'https://follow.center',
+    target: 'https://sale.gotosiam.com',
     changeOrigin: true
   },
   '/web_socket': {
-    target: 'wss://follow.center',
-    wss: true,
+    target: 'ws://sale.gotosiam.com',
+    ws: true,
     changeOrigin: true
   }
 }
