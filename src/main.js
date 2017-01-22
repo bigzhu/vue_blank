@@ -1,7 +1,5 @@
 import Vue from 'vue'
 Vue.config.debug = true
-import VueRouter from 'vue-router'
-// Vue.use(VueRouter)
 import VueI18n from 'vue-i18n'
 Vue.use(VueI18n)
 // set lang
@@ -12,31 +10,10 @@ import locales from './locales'
 Object.keys(locales).forEach(function (lang) {
   Vue.locale(lang, locales[lang])
 })
+import router from './router'
 
-import {checkLogin} from '../../lib_bz/functions/user'
 import fastclick from 'fastclick'
 import App from './App'
-import Login from './components/Login'
-
-const routes = [
-  { path: '/Login', name: 'Login', component: Login }
-]
-
-const router = new VueRouter(
-  {
-    mode: 'history',
-    routes: routes
-  }
-)
-
-router.beforeEach((to, from, next) => {
-  // check is login?
-  if (!checkLogin() && to.path !== '/Login') {
-    next('/Login')
-    return
-  }
-  next()
-})
 
 App.router = router
 new Vue(App).$mount('#app')
